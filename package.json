@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "node server",
-    "test": "mocha"
+    "test": "mocha && jasmine-node --verbose spec/node"
   },
   "repository": {
     "type": "git",
