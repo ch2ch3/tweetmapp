@@ -19,7 +19,7 @@ io.on('connection', function(socket) {
   console.log("socket.io server created");
   if (connections === 0 ) { tweetStream.openStream(); }
     connections += 1;
-    console.log('User connected.');
+    console.log('User connected');
     globalEmitter.on('tweet', function(object) {
     socketObject = streamProcess(object);
     socket.emit('object', socketObject);
@@ -27,13 +27,13 @@ io.on('connection', function(socket) {
 
   socket.on('disconnect', function() {
     connections -= 1;
-    console.log('User disconnected.');
+    console.log('User disconnected');
     if (connections === 0) { tweetStream.closeStream(); }
   });
 });
 
 var port = process.env.PORT || 3000;
 
-http.listen(process.env.PORT || 3000, function(){
+http.listen(port, function(){
   console.log("Listening on port " + port);
 });
