@@ -1,8 +1,12 @@
 var counter = 0;
-var tweetRate = 500;
-var fadeSpeed = 5000;
+var slowTweetRate = 500;
+var slowFadeSpeed = 5000;
+var fastTweetRate = 10;
+var fastFadeSpeed = 1000;
+var tweetRate = slowTweetRate;
+var fadeSpeed = slowFadeSpeed;
 var ready = true;
-var onOff = 0;
+var slowMode = true;
 
 function streamDisplay(data) {
 	counter += 1
@@ -16,13 +20,13 @@ function streamDisplay(data) {
 }
 
 $('#tweetStreamDisplay').on('click', function() {
-	onOff += 1
-	if (onOff % 2 === 0) {
-		fadeSpeed = 5000;
-		tweetRate = 500; }
+	slowMode = !slowMode
+	if (slowMode === true) {
+		fadeSpeed = slowFadeSpeed;
+		tweetRate = slowTweetRate; }
 	else {
-		fadeSpeed = 1000;
-		tweetRate = 10; }
+		fadeSpeed = fastFadeSpeed;
+		tweetRate = fastTweetRate; }
 });
 
 $('#yohort').on('click', function() {
@@ -30,9 +34,6 @@ $('#yohort').on('click', function() {
 	stopped = true;
 	$('#overlay-text').css('opacity', '1.0');
     $('#overlay-text').html('<br><br><p>Art mode enabled!<br>  Scroll, zoom and enjoy!  <br>Press stop to reset.</p>')
-
-
-
 })
 
 function streamDisplayReset() {
