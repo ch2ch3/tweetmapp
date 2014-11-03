@@ -29,13 +29,20 @@ $(document).ready(function() {
   $('#stop').on('click', function(){
     artModeOn = false;
     stopped = true;
-    tweetNumber = 0;
+    tweetCount = 0;
     _clearTweetCount();
     streamDisplayReset();
     canvasReset();
     dataStore = [];
     $('#overlay-text').css('opacity', '1.0');
     $('#overlay-text').html('<br><br><p>Press play to start the map again.</p>')
+  })
+
+  $('#yohort').on('click', function() {
+    artModeOn = true;
+    stopped = true;
+    $('#overlay-text').css('opacity', '1.0');
+    $('#overlay-text').html('<br><p>Art mode enabled!<br>  Scroll, zoom and enjoy!<br>Press stop to reset.</p>')
   })
 
 })
