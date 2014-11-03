@@ -18,9 +18,9 @@ var connections = 0;
 io.on('connection', function(socket) { 
   console.log("socket.io server created");
   if (connections === 0 ) { tweetStream.openStream(); }
-    connections += 1;
-    console.log('User connected');
-    globalEmitter.on('tweet', function(object) {
+  connections += 1;
+  console.log('User connected');
+  globalEmitter.on('tweet', function(object) {
     socketObject = streamProcess(object);
     socket.emit('object', socketObject);
   });

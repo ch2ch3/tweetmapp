@@ -1,4 +1,4 @@
-var canvas, x, y, width, height, ratio, radius, x_min, y_min, viewportWidth, viewportHeight;
+var canvas, x, y, width, height, mapScale, radius, x_min, y_min, viewportWidth, viewportHeight;
 
 window.onload = window.onresize = function() {
 
@@ -6,7 +6,7 @@ window.onload = window.onresize = function() {
   viewportHeight = window.innerHeight;
   width = viewportWidth;
   height = viewportWidth / 2;
-  ratio = viewportWidth / 360;
+  mapScale = viewportWidth / 360;
   radius = viewportWidth / 1000;
 
   $('#overlay-text').css('height', (0.65*height) + 'px');
