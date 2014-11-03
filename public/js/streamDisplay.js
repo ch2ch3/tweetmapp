@@ -1,5 +1,5 @@
 var counter = 0;
-var slowMode = true;
+var slowModeOn = true;
 var slowTweetRate = 500;
 var slowFadeSpeed = 5000;
 var fastTweetRate = 10;
@@ -12,7 +12,7 @@ function streamDisplay(data) {
 	if (counter % tweetRate === 0 && stopped === false) {
 		var text = data.text;
 		var username = data.username;
-		$('<li>' + '<b>@' + username + ':</b> ' + text + '</li>').prependTo('#tweetStreamDisplay ul').fadeOut(fadeSpeed, function() {
+		$('<li>' + '<b>@' + username + ':</b> ' + text + '</li>').prependTo('#tweet-stream-display ul').fadeOut(fadeSpeed, function() {
 			$(this).remove();
 		});
 	}
@@ -27,7 +27,7 @@ function setSpeed() {
 	tweetRate = slowMode === true ? slowTweetRate : fastTweetRate
 }
 
-$('#tweetStreamDisplay').on('click', function() {
+$('#tweet-stream-display').on('click', function() {
 	toggleMode();
 	setSpeed();
 });
@@ -40,5 +40,5 @@ $('#yohort').on('click', function() {
 })
 
 function streamDisplayReset() {
-  $('#tweetStreamDisplay ul').empty();
+  $('#tweet-stream-display ul').empty();
 }

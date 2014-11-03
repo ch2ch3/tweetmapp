@@ -1,5 +1,5 @@
 var dataStore = [];
-var canvas, d, cx, cy, stopped, tweetNumber = 0;
+var canvas, d, cx, cy, stopped, tweetCount = 0;
 var artModeOn = false;
 
 function draw() {
@@ -28,8 +28,8 @@ function addData(data) {
 function streamDraw(data) {
   if(stopped === false) {
     addData(data);
-    tweetNumber += 1;
-    $('#tweetNumber').text(tweetNumber + ' ');
+    tweetCount += 1;
+    $('#tweet-count').text(tweetCount + ' ');
     canvas.beginPath();
     var cx = x((data.coords[0]*mapScale));
     var cy = y((data.coords[1])*mapScale);

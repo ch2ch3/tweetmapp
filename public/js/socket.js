@@ -16,8 +16,8 @@ $(document).ready(function() {
   $('#play').on('click', function(){
     stopped = false;
     $('#overlay-text').css('opacity', '0');
-    $('#tweetStreamDisplay').css('opacity', '1.0');
-    $('.legend-container').css('opacity', '1.0');
+    $('#tweet-stream-display').css('opacity', '1.0');
+    $('#legend-container').css('opacity', '1.0');
     $('#instructions').css('opacity', '1.0');
     $('#about').css('opacity', '1.0');
   })
@@ -30,7 +30,7 @@ $(document).ready(function() {
     artModeOn = false;
     stopped = true;
     tweetNumber = 0;
-    _clearTweetNumber();
+    _clearTweetCount();
     streamDisplayReset();
     canvasReset();
     dataStore = [];
@@ -40,6 +40,6 @@ $(document).ready(function() {
 
 })
 
-function _clearTweetNumber() {
-  $('#tweetNumber').text(tweetNumber + ' ');
+function _clearTweetCount() {
+  $('#tweet-count').text(tweetCount + ' ');
 }

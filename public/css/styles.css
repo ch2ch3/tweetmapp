@@ -6,7 +6,7 @@ body {
   line-height: 1.5em;
 }
 
-.legend-container {
+#legend-container {
   position: fixed;
   z-index: 2;
   width: 220px;
@@ -37,7 +37,7 @@ label.positive {
   float: right;
 }
 
-.legend-container label {
+#legend-container label {
   font-size: 0.8em;
   line-height: 0.8em;
   margin-top: 5px;
@@ -163,7 +163,7 @@ footer {
   text-decoration: underline;
 }
 
-#tweetCount {
+#tweet-count-text {
   color: #54A6E4;
   width: 34%;
   text-align: center;
@@ -171,7 +171,7 @@ footer {
   font-weight: 400;
 }
 
-#tweetNumber {
+#tweet-count {
   font-size: 2em;
   line-height: 1em;
   font-weight: 600;
@@ -265,7 +265,7 @@ canvas {
   margin: 0;
 }
 
-#tweetStreamDisplay {
+#tweet-stream-display {
   z-index: 2;
   width: 75%;
   height: 3.5em;
@@ -280,7 +280,7 @@ canvas {
   cursor: hand;
 }
 
-#tweetStreamDisplay ul {
+#tweet-stream-display ul {
   list-style-type: none;
 }
 
