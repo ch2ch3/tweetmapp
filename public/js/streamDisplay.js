@@ -1,12 +1,11 @@
 var counter = 0;
+var slowMode = true;
 var slowTweetRate = 500;
 var slowFadeSpeed = 5000;
 var fastTweetRate = 10;
 var fastFadeSpeed = 1000;
 var tweetRate = slowTweetRate;
 var fadeSpeed = slowFadeSpeed;
-var ready = true;
-var slowMode = true;
 
 function streamDisplay(data) {
 	counter += 1
@@ -19,14 +18,18 @@ function streamDisplay(data) {
 	}
 }
 
+function toggleMode() {
+	slowMode = !slowMode;
+}
+
+function setSpeed() {
+	fadeSpeed = slowMode === true ? slowFadeSpeed : fastFadeSpeed
+	tweetRate = slowMode === true ? slowTweetRate : fastTweetRate
+}
+
 $('#tweetStreamDisplay').on('click', function() {
-	slowMode = !slowMode
-	if (slowMode === true) {
-		fadeSpeed = slowFadeSpeed;
-		tweetRate = slowTweetRate; }
-	else {
-		fadeSpeed = fastFadeSpeed;
-		tweetRate = fastTweetRate; }
+	toggleMode();
+	setSpeed();
 });
 
 $('#yohort').on('click', function() {
