@@ -207,7 +207,7 @@ button:hover {
   margin: 50px auto 0;
 }
 
-#startConnection {
+#play {
   float: left;
   background: url(../svg/ic_play_arrow_48px.svg);
   background-size: 20px 20px;
@@ -217,14 +217,14 @@ button:hover {
   height: 40px;
 }
 
-#startConnection:hover {
+#play:hover {
   background: url(../svg/ic_play_arrow_48px_white.svg);
   background-size: 20px 20px;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-#stopConnection {
+#pause {
   margin-left: 15px;
   background: url(../svg/ic_pause_48px.svg);
   background-size: 20px 20px;
@@ -234,14 +234,14 @@ button:hover {
   height: 40px;
 }
 
-#stopConnection:hover {
+#pause:hover {
   background: url(../svg/ic_pause_48px_white.svg);
   background-size: 20px 20px;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-#reset {
+#stop {
   float: right;
   background: url(../svg/ic_stop_48px.svg);
   background-size: 20px 20px;
@@ -251,7 +251,7 @@ button:hover {
   height: 40px;
 }
 
-#reset:hover {
+#stop:hover {
   background: url(../svg/ic_stop_48px_white.svg);
   background-size: 20px 20px;
   background-repeat: no-repeat;

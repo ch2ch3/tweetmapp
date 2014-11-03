@@ -33,10 +33,10 @@ $('#tweetStreamDisplay').on('click', function() {
 });
 
 $('#yohort').on('click', function() {
-	artModeVar = true;
+	artModeOn = true;
 	stopped = true;
 	$('#overlay-text').css('opacity', '1.0');
-    $('#overlay-text').html('<br><br><p>Art mode enabled!<br>  Scroll, zoom and enjoy!  <br>Press stop to reset.</p>')
+  $('#overlay-text').html('<br><br><p>Art mode enabled!<br>  Scroll, zoom and enjoy!  <br>Press stop to reset.</p>')
 })
 
 function streamDisplayReset() {

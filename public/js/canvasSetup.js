@@ -1,6 +1,4 @@
-var canvas, x, y, width, height, ratio, radius, x_min, y_min;
-var viewportWidth;
-var viewportHeight;
+var canvas, x, y, width, height, ratio, radius, x_min, y_min, viewportWidth, viewportHeight;
 
 window.onload = window.onresize = function() {
 
@@ -27,20 +25,19 @@ window.onload = window.onresize = function() {
     .call(d3.behavior.zoom().x(x).y(y).scaleExtent([1, 400]).on("zoom", zoom))
     .node().getContext("2d");
 
-    
   zoom();
 
 };
 
 function canvasReset() {
-  if (artModeVar === true ) { canvas
-  }
-  else { 
+  if(artModeOn === true ) {
+    canvas;
+  } else { 
     canvas.clearRect(0, 0, width, height);
   }
 }
 
 function zoom() {
- canvasReset();
+  canvasReset();
   draw();
 }

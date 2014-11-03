@@ -1,7 +1,7 @@
 var dataStore = [];
 var canvas, d, cx, cy, x, y, ratio, radius, stopped, tweetNumber = 0;
 
-var artModeVar = false;
+var artModeOn = false;
 
 function draw() {
   var i = -1, n = dataStore.length, d, cx, cy;
@@ -10,7 +10,7 @@ function draw() {
     d = dataStore[i];
     cx = x(d[0]*ratio);
     cy = y(d[1]*ratio);
-    canvas.fillStyle = artModeVar === true ? artMode() : d[2]; 
+    canvas.fillStyle = artModeOn === true ? artMode() : d[2]; 
     canvas.moveTo(cx, cy);
     canvas.arc(cx, cy, selectRadius(5), 0, 2 * Math.PI);
     canvas.fill();
@@ -19,7 +19,7 @@ function draw() {
 }
 
 function selectRadius(number) {
- return artModeVar === true ? Math.random()*number : radius;
+ return artModeOn === true ? Math.random()*number : radius;
 }
 
 function addData(data) {
@@ -35,7 +35,7 @@ function streamDraw(data) {
     var cx = x((data.coords[0]*ratio));
     var cy = y((data.coords[1])*ratio);
     canvas.arc(cx, cy, selectRadius(5), 0, 2 * Math.PI, false);
-    canvas.fillStyle = artModeVar === true ? artMode() : data.colour;
+    canvas.fillStyle = artModeOn === true ? artMode() : data.colour;
     canvas.fill();
     canvas.closePath();
   }
